@@ -1,0 +1,51 @@
+@font-face {
+font-family: Burbank;
+src: url("fonts/font-awesome/fonts/burbank.otf") format("opentype"),
+	 url("fonts/BurbankBigCondensed-Bold.woff") format("woff");
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid rgb(20,20,20);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+	color: white;
+}
+
+h1{
+	font-family: "Arial Black", Gadget, sans-serif;
+	text-align: center;
+	font-size: 5vw;
+	color: white;
+}
+
+th{
+	font-size: 3vw;
+	background-color: rgba(116, 44, 183,0.5);
+	-webkit-text-stroke-width: 0.15vw;
+   -webkit-text-stroke-color: black;
+}
+
+tr{
+	font-size: 2.8vw;	
+	background-color: rgba(178, 120, 232, 0.5);	
+}
+
+tr:nth-child(even){background-color: rgba(198, 162, 232, 0.5)}
+
+body{
+	background-image: url("../images/fortnite.jpg");
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight:normal;
+	font-style:normal;
+}

@@ -1,0 +1,1 @@
+{"Mode":"tournament","Games To Play":4,"Points per Solo kill":10,"Points per Duo kill":5,"Points per Trio kill":3,"Points per Squad kill":2,"Points for 1st Placement":100,"Points for 2nd Placement":50,"Points for 3rd Placement":20,"Points per kill":10,"Points for 1st Placement2":100}
