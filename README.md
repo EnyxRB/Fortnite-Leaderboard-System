@@ -14,7 +14,7 @@ In the future, I plan to branch out the system to be able to manage any game you
 ## How to set it up
 The leaderboard uses an admin login system, in order to access the admin panel, therefore it can be deployed on any live webiste without security worries. However, this means you must have access to an sql database in order to set it up. Check out Wamp for a free local deployment, including an sql database (http://www.wampserver.com/en/). 
 
-I have made a copy of the database and table configuration in the sql file named 'aeropath_leaderboard.sql' (found in the root). This contains one user account with the details:
+I have made a copy of the database and table configuration in the sql file named 'aeropath_leaderboard.sql' (found in the root), you'll need to import this into your database for functionality (I recommend using phpmyadmin for ease of use). This contains one user account with the details:
 username: admin
 password: fortnite
 
