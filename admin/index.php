@@ -14,28 +14,35 @@ if(isset($_SESSION['logged_in'])){
 	    <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Fortnite Admin Section | Login</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/tools.css">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/custom-boot.css?ver=1">
 	</head>
-	<body>
+	<body class="bg-dark text-light">
 		<div class="container-fluid">
 			</br>
-			<h1 style="text-align: center;">Fortnite Admin Login</h1>
+			<div class="d-flex justify-content-center">
+				<h1 style="text-align: center;">Fortnite Admin Login</h1>
+			</div>
 			</br>
 			<form action="includes/login.php" method="post" align="center" id="form1">
-				Username: <input type="text" name="username"><p></p>
-				Password: <input type="password" name="password"><p class="error">
-				<div class="error">
-					<?php
-						if (isset($_SESSION['error'])){
-							echo $_SESSION['error'];
-							unset($_SESSION['error']); 
-						}					
-					?>
-				</div>
-				<p>
+				<input type="text" name="username" class="form-control-lg border-0 rounded" placeholder="Username"><p></p>
+				<input type="password" name="password" class="form-control-lg border-0 rounded" placeholder="Password"><p class="error">
 				
-				<button type="submit" form="form1" class="btn btn-primary">Log in</button>
+				<div class="d-flex justify-content-center">
+				<?php
+					if (isset($_SESSION['error'])){
+						echo '<div class="error alert alert-danger" role="alert">';
+							echo $_SESSION['error'];
+						echo '</div>';
+						unset($_SESSION['error']); 
+					}
+					else{
+						echo "</br>";
+					}
+				?>
+				</div>
+				
+				<button type="submit" form="form1" class="btn-lg btn-primary">Log in</button>
 
 			</form>
 		</div>

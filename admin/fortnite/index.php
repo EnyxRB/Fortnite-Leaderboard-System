@@ -15,12 +15,15 @@ if(!isset($_SESSION['logged_in'])){
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Fortnite Admin Section | Tools</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-		<link rel="stylesheet" href="../css/tools.css?v=1.1">
+		<link rel="stylesheet" href="../css/tools.css?ver=1.1">
+		<link rel="stylesheet" type="text/css" href="../css/custom-boot.css?ver=1">
 	</head>
-	<body>
+	<body class="bg-dark text-light">
 		<div class="container-fluid">
-			<h1 style="text-align: center;">Fortnite Admin Tools</h1></br>
-		
+			<div class="d-flex justify-content-center">
+				<h1 style="text-align: center;">Fortnite Leaderboard Admin Panel</h1></br>
+			</div>
+			</br>
 			<a href="add-player.php"><button type="button" class="btn btn-primary btn-lg">Add Player</button></a></br></br>
 			<a href="add-score.php"><button type="button" class="btn btn-primary btn-lg">Add Score</button></a></br></br>
 			<a href="delete-player.php"><button type="button" class="btn btn-primary btn-lg">Delete Player</button></a></br></br>

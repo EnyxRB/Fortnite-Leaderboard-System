@@ -11,10 +11,6 @@ if(!isset($_SESSION['logged_in'])){
 	redirect("../../index.php");			
 }
 
-function f($a, $x){
-	return pow($a,$x);
-}
-
 function register($name,$placement,$kills){	
 	global $servername;
 	global $dbname;
@@ -28,7 +24,7 @@ function register($name,$placement,$kills){
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	
-	$sql = "SELECT name, score, players FROM fortnite";
+	$sql = "SELECT name, score, players FROM noah_fortnite";
 	$result = $conn->query($sql);
 	$players = 0;
 	$curscore = 0;
@@ -79,7 +75,7 @@ function register($name,$placement,$kills){
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	
-	$sql = "UPDATE fortnite SET score = ".$newscore.", games = games + 1 WHERE name='".$name."'";
+	$sql = "UPDATE noah_fortnite SET score = ".$newscore.", games = games + 1 WHERE name='".$name."'";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "Record updated successfully";

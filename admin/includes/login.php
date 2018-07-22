@@ -22,7 +22,7 @@ function login($username,$password){
 		$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
-		$sql_select = "SELECT * FROM users WHERE username=:username";
+		$sql_select = "SELECT * FROM noah_users WHERE username=:username";
 		$query = $conn->prepare($sql_select);
 		
 		$query->execute(array(':username' => $username));

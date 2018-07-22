@@ -17,22 +17,25 @@ if(!isset($_SESSION['logged_in'])){
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Fortnite Admin Section | Add Player</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-		<link rel="stylesheet" href="../css/tools.css?v=1.1">	
+		<link rel="stylesheet" href="../css/tools.css?ver=1">	
+		<link rel="stylesheet" type="text/css" href="../css/custom-boot.css?ver=1">
 	</head>
-	<body>
+	<body class="bg-dark text-light">
 		<div class="container-fluid">
-			<h1 style="text-align: center;">Fortnite Admin Tools - Add Player</h1></br>
+			<div class="d-flex justify-content-center">
+				<h1 style="text-align: center;">Add Player</h1></br>
+			</div>
 			
 			<form action="../includes/fortnite/player-add.php" method="post" align="center" id="form1" class="form-horizontal">
 			
 				<div class="form-group">
 				  <label for="usr">Player/Team Name:</label>
-				  <input type="text" class="form-control" id="usr" name="name">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="name">	
 				</div>
 				
 				<div class="form-group">
 				  <label for="sel1">Number of Players:</label>
-				  <select class="form-control" id="sel1" name="players">
+				  <select class="form-control border-0 rounded bg-secondary text-white" id="sel1" name="players">
 					<option value = "1">1</option>
 					<option value = "2">2</option>
 					<option value = "3">3</option>
@@ -40,13 +43,18 @@ if(!isset($_SESSION['logged_in'])){
 				  </select>
 				</div>	
 						
-				<div id="error">
-					<?php
-						if (isset($_SESSION['error'])){
+				<div class="d-flex justify-content-center">
+				<?php
+					if (isset($_SESSION['error'])){
+						echo '<div class="error alert alert-danger" role="alert">';
 							echo $_SESSION['error'];
-							unset($_SESSION['error']); 
-						}					
-					?>
+						echo '</div>';
+						unset($_SESSION['error']); 
+					}
+					else{
+						echo "</br>";
+					}
+				?>
 				</div>
 				
 				<button type="submit" form="form1" class="btn btn-primary btn-lg">Submit</button></br></br>

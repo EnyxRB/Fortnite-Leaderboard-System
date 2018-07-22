@@ -22,19 +22,27 @@ if(!isset($_SESSION['f_settings'])){
 		<title>Fortnite Admin Section | Settings</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<link rel="stylesheet" href="../css/tools.css?v=1.1">	
+		<link rel="stylesheet" type="text/css" href="../css/custom-boot.css?ver=1">
 	</head>
-	<body>
+	<body class="bg-dark text-light">
 		<div class="container-fluid">
-			<h1 style="text-align: center;">Fortnite Admin Tools - Settings</h1></br></br>
-
-			<div id="error" style="color: red;">
-				<?php
-					if (isset($_SESSION['error'])){
+			<div class="d-flex justify-content-center">
+				<h1 style="text-align: center;">Leaderboard Settings</h1></br></br>
+			</div>
+			
+			<div class="d-flex justify-content-center">
+			<?php
+				if (isset($_SESSION['error'])){
+					echo '<div class="error alert alert-danger" role="alert">';
 						echo $_SESSION['error'];
-						unset($_SESSION['error']); 
-					}					
-				?>
-			</div>			
+					echo '</div>';
+					unset($_SESSION['error']); 
+				}
+				else{
+					echo "</br>";
+				}
+			?>
+			</div>		
 			
 			<h2 style="text-align: left;">General Options:</h2>
 						
@@ -42,12 +50,12 @@ if(!isset($_SESSION['f_settings'])){
 
 				<div class="form-group">
 				  <label for="usr">Games to play (Default 4):</label>
-				  <input type="text" class="form-control" id="usr" name="s1" value="<?php echo $_SESSION['f_settings']['Games To Play']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s1" value="<?php echo $_SESSION['f_settings']['Games To Play']; ?>">	
 				</div>			
 			
 				<div class="form-group">
 				  <label for="sel1">Mode:</label>
-				  <select class="form-control" id="sel1" name="s0">
+				  <select class="form-control border-0 rounded bg-secondary text-white" id="sel1" name="s0">
 					<?php 
 					$mode = $_SESSION['f_settings']['Mode'];
 					
@@ -82,49 +90,49 @@ if(!isset($_SESSION['f_settings'])){
 				
 				<div class="form-group">
 				  <label for="usr">Points per Solo kill (Default 10):</label>
-				  <input type="text" class="form-control" id="usr" name="s2" value="<?php echo (int)$_SESSION['f_settings']['Points per Solo kill']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s2" value="<?php echo (int)$_SESSION['f_settings']['Points per Solo kill']; ?>">	
 				</div>
 				
 				<div class="form-group">
 				  <label for="usr">Points per Duo kill (Default 5):</label>
-				  <input type="text" class="form-control" id="usr" name="s3" value="<?php echo (int)$_SESSION['f_settings']['Points per Duo kill']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s3" value="<?php echo (int)$_SESSION['f_settings']['Points per Duo kill']; ?>">	
 				</div>	
 
 				<div class="form-group">
 				  <label for="usr">Points per Trio kill (Default 3):</label>
-				  <input type="text" class="form-control" id="usr" name="s4" value="<?php echo (int)$_SESSION['f_settings']['Points per Trio kill']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s4" value="<?php echo (int)$_SESSION['f_settings']['Points per Trio kill']; ?>">	
 				</div>		
 
 				<div class="form-group">
 				  <label for="usr">Points per Squad kill (Default 2):</label>
-				  <input type="text" class="form-control" id="usr" name="s5" value="<?php echo $_SESSION['f_settings']['Points per Squad kill']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s5" value="<?php echo $_SESSION['f_settings']['Points per Squad kill']; ?>">	
 				</div>	
 
 				<div class="form-group">
 				  <label for="usr">Points for 1st Placement (Default 100):</label>
-				  <input type="text" class="form-control" id="usr" name="s6" value="<?php echo $_SESSION['f_settings']['Points for 1st Placement']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s6" value="<?php echo $_SESSION['f_settings']['Points for 1st Placement']; ?>">	
 				</div>	
 
 				<div class="form-group">
 				  <label for="usr">Points for 2nd Placement (Default 50):</label>
-				  <input type="text" class="form-control" id="usr" name="s7" value="<?php echo $_SESSION['f_settings']['Points for 2nd Placement']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s7" value="<?php echo $_SESSION['f_settings']['Points for 2nd Placement']; ?>">	
 				</div>
 
 				<div class="form-group">
 				  <label for="usr">Points for 3rd Placement (Default 20):</label>
-				  <input type="text" class="form-control" id="usr" name="s8" value="<?php echo $_SESSION['f_settings']['Points for 3rd Placement']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s8" value="<?php echo $_SESSION['f_settings']['Points for 3rd Placement']; ?>">	
 				</div></br>					
 								
 				<h2 style="text-align: left;">Party Options:</h2>
 	
 				<div class="form-group">
 				  <label for="usr">Points per kill (Default 10):</label>
-				  <input type="text" class="form-control" id="usr" name="s9" value="<?php echo $_SESSION['f_settings']['Points per kill']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s9" value="<?php echo $_SESSION['f_settings']['Points per kill']; ?>">	
 				</div>
 	
 				<div class="form-group">
 				  <label for="usr">Points for 1st Placement (Default 100):</label>
-				  <input type="text" class="form-control" id="usr" name="s10" value="<?php echo $_SESSION['f_settings']['Points for 1st Placement2']; ?>">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="s10" value="<?php echo $_SESSION['f_settings']['Points for 1st Placement2']; ?>">	
 				</div></br>				
 							
 				<button type="submit" form="form1" class="btn btn-primary btn-lg">Submit</button></br></br>

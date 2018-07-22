@@ -3,6 +3,7 @@
 session_start(); 
 
 require_once('functions.php'); 
+include('settings.php');
 
 if (!isset($_SESSION['logged_in'])){ 
 	redirect('../index.php'); 

@@ -23,15 +23,18 @@ global $dbpassword;
 		<title>Fortnite Admin Section | Add Score</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<link rel="stylesheet" href="../css/tools.css?v=1.1">
+		<link rel="stylesheet" type="text/css" href="../css/custom-boot.css?ver=1">
 	</head>
-	<body>
+	<body class="bg-dark text-light">
 		<div class="container-fluid">
-			<h1 style="text-align: center;">Fortnite Admin Tools - Add Score</h1></br>
+			<div class="d-flex justify-content-center">
+				<h1 style="text-align: center;">Add Score</h1></br>
+			</div>
 		
 			<form action="../includes/fortnite/score-add.php" method="post" align="center" id="form1" class="form-horizontal">
 				<div class="form-group">
 					<label for="sel1">Player/Team Name:</label>
-					<select class="form-control" id="sel1" name="name">
+					<select class="form-control border-0 rounded bg-secondary text-white" id="sel1" name="name">
 				<?php
 				try{
 					$conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $dbusername, $dbpassword);
@@ -43,7 +46,7 @@ global $dbpassword;
 					$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
-					$sql_select = 'SELECT name, games FROM fortnite';
+					$sql_select = 'SELECT name, games FROM noah_fortnite';
 					$maxgames = $_SESSION['f_settings']['Games To Play'];
 					
 					foreach ($conn->query($sql_select) as $row) {
@@ -64,21 +67,26 @@ global $dbpassword;
 				
 				<div class="form-group">
 				  <label for="usr">Placement:</label>
-				  <input type="text" class="form-control" id="usr" name="placement">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="placement">	
 				</div>
 				
 				<div class="form-group">
 				  <label for="usr">Kills:</label>
-				  <input type="text" class="form-control" id="usr" name="kills">	
+				  <input type="text" class="form-control border-0 rounded bg-secondary text-white" id="usr" name="kills">	
 				</div>
 					
-				<div id="error">
-					<?php
-						if (isset($_SESSION['error'])){
+				<div class="d-flex justify-content-center">
+				<?php
+					if (isset($_SESSION['error'])){
+						echo '<div class="error alert alert-danger" role="alert">';
 							echo $_SESSION['error'];
-							unset($_SESSION['error']); 
-						}					
-					?>
+						echo '</div>';
+						unset($_SESSION['error']); 
+					}
+					else{
+						echo "</br>";
+					}
+				?>
 				</div>
 				
 				<button type="submit" form="form1" class="btn btn-primary btn-lg">Submit</button></br></br>

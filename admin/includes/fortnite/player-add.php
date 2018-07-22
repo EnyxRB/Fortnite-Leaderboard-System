@@ -29,7 +29,7 @@ function register($name,$players){
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		//Finding if a user exists with that username inside database
-		$sql_select = 'SELECT * FROM fortnite WHERE name=:name';
+		$sql_select = 'SELECT * FROM noah_fortnite WHERE name=:name';
 		$query_select = $conn->prepare($sql_select);
 		
 		$query_select->execute(array(':name' => $name));
@@ -50,7 +50,7 @@ function register($name,$players){
 		
 		else{
 			//Inserting new user data into database
-			$sql_insert = "INSERT INTO fortnite (name, players) VALUES (:name, :players)";
+			$sql_insert = "INSERT INTO noah_fortnite (name, players) VALUES (:name, :players)";
 			$_SESSION['error'] = "Player added";
 		}
 		

@@ -1,0 +1,20 @@
+.alert {
+	text-align: center;
+	width:350px;    
+}
+
+/*h1{
+	background-color: #212121;
+	width: 500px;
+	border-radius: 10px;
+	height: 55px;
+}*/
+
+h1{
+	background-color: #212121;
+	border-radius: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}

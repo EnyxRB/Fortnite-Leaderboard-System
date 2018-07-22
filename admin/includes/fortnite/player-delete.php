@@ -30,7 +30,7 @@ if ($con->connect_errno)
     exit;
 }
 
-$sql="DELETE FROM fortnite WHERE name='$uname'";
+$sql="DELETE FROM noah_fortnite WHERE name='$uname'";
 $con->query($sql);
 
 $_SESSION['error'] = "Player deleted";
